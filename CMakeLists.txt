@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.16)
+project(cpp_mini_games VERSION 1.0.0 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+find_package(Curses REQUIRED)
+add_executable(cpp_mini_games
+ src/main.cpp src/Menu.cpp src/UI.cpp src/TicTacToe.cpp src/SnakeGame.cpp)
+target_include_directories(cpp_mini_games PRIVATE include ${CURSES_INCLUDE_DIRS})
+target_link_libraries(cpp_mini_games PRIVATE ${CURSES_LIBRARIES})
+target_compile_options(cpp_mini_games PRIVATE -Wall -Wextra -Wpedantic)
