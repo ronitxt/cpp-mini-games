@@ -95,7 +95,7 @@ void runSnakeGame() {
 
         while (!gameOver && !leave) {
             drawGame(snake, food, score, best, 1 + score / 50, paused, w, h);
-            timeout(paused ? -1 : std::max(55, 145 - score), 0);
+            timeout(paused ? -1 : std::max(55, 145 - score));
 
             const int key = getch();
             if (key == 'q' || key == 'Q') {
